@@ -1,14 +1,12 @@
-package com.todo.todo.entity;
+package com.todo.todo.model.entity;
 
-import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,17 +18,22 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "FOLDER")
-public class Folder {
+@Table(name = "TASK")
+public class Task {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "FOLDER_ID")
+  @Column(name = "TASK_ID")
   private Long id;
 
-  @Column(name = "NAME", nullable = false)
-  private String name;
+  @Column(name = "TEXT", nullable = false, unique = false)
+  private String text;
 
-  @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST, mappedBy = "folder")
-  private List<Task> tasks;
+  @Column(name = "IS_DONE", nullable = false)
+  private Boolean isDone;
+
+  @ManyToOne
+  @JoinColumn(name = "FOLDER_ID", nullable = false)
+  private Folder folder;
+
 }
