@@ -27,6 +27,6 @@ echo "---------------------------------------------"
 echo "[INFO] Running spring-boot api... "
 echo "---------------------------------------------"
 
-cd..
+cd ..
 cd backend
 mvn spring-boot:run
