@@ -15,6 +15,6 @@ Please if you don´t excute the springboot app in "localhost:8080", change path 
 Please if you don´t execute the react app in "localhost:3030", change path uri in backend > src > main > java > com > todo > todo > controller > @CrossOrigin
 
 ## Login
-The authentication is with a jwt, and you can register new users
-The default email is "admin@admin.com"
+The authentication is with a jwt, and you can register new users <br>
+The default email is "admin@admin.com" <br>
 The default password is "admin"
