@@ -31,8 +31,8 @@ class Folders extends React.Component {
                             <div key={folder.id}>
                                 <li className="list-group-item border-0">
                                     {"  -  " + folder.name}
-                                    <a className="m-2" onClick={() => {onViewItems(folder)}} role="button">View Items</a>
-                                    <a className="m-2" onClick={() => {deleteFolder(folder)}} role="button">Remove</a>
+                                    <a className="m-2" role="button" onClick={() => {onViewItems(folder)}}>View Items</a>
+                                    <a className="m-2" role="button" onClick={() => {deleteFolder(folder)}}>Remove</a>
                                 </li>
                             </div>
 
