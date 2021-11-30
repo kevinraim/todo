@@ -12,19 +12,21 @@ echo " SUCCESFULL "
 echo "---------------------------------------------"
 
 
-# Springboot app
-echo "---------------------------------------------"
-echo "[INFO] Running spring-boot api... "
-echo "---------------------------------------------"
-
-cd backend
-mvn spring-boot:run &
-
 
 # React app
 echo "---------------------------------------------"
 echo "[INFO] Running react app... "
 echo "---------------------------------------------"
-cd .. 
+
 cd frontend 
-npm start
+npm install
+npm start &
+
+# Springboot app
+echo "---------------------------------------------"
+echo "[INFO] Running spring-boot api... "
+echo "---------------------------------------------"
+
+cd..
+cd backend
+mvn spring-boot:run
