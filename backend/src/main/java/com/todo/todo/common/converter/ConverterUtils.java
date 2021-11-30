@@ -8,6 +8,7 @@ import com.todo.todo.model.entity.Task;
 import com.todo.todo.model.response.FolderDetailsResponse;
 import com.todo.todo.model.response.ListFoldersResponse;
 import com.todo.todo.model.response.TaskDetailsResponse;
+import com.todo.todo.model.response.UserDetailsResponse;
 
 @Component("converter")
 public class ConverterUtils {
@@ -47,6 +48,13 @@ public class ConverterUtils {
     }
 
     return new ListFoldersResponse(foldersDetails);
+  }
+
+  public UserDetailsResponse toResponse(String email, String jwtToken) {
+    UserDetailsResponse userDetailsResponse = new UserDetailsResponse();
+    userDetailsResponse.setEmail(email);
+    userDetailsResponse.setJwtToken(jwtToken);
+    return userDetailsResponse;
   }
 
   private TaskDetailsResponse folderTaskToResponse(Task task) {

@@ -39,7 +39,7 @@ class Task extends React.Component {
                         tasks.map((task, i) => (
                             <div key={i}>
                                 <li className="list-group-item border-0">
-                                    <input className="form-check-input" onClick={() => {updateTaskIsDone(task.id, !task.isDone)}} type="checkbox" value="" id="flexCheckDefault" checked={task.isDone ? true : false} />
+                                    <input className="form-check-input" onChange={() => {updateTaskIsDone(task.id, !task.isDone)}} type="checkbox" value="" id="flexCheckDefault" checked={task.isDone ? true : false} />
                                     {"  -  " + task.text}
                                     <a className="m-2" role="button" onClick={() => {editTask(task)}} data-bs-toggle="modal" data-bs-target="#update-task-modal">Edit</a>
                                 </li>
