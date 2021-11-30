@@ -32,6 +32,13 @@ public class ErrorHandler {
         .body(new ErrorResponse(e, HttpStatus.BAD_REQUEST.value()));
   }
 
+  @ExceptionHandler(EmailAlredyTakenException.class)
+  public ResponseEntity<ErrorResponse> handleEmailAlredyTakenException(HttpServletRequest request,
+      EmailAlredyTakenException e) {
+    return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+        .body(new ErrorResponse(e, HttpStatus.BAD_REQUEST.value()));
+  }
+
   @ExceptionHandler(Exception.class)
   public ResponseEntity<ErrorResponse> handleDefaultException(HttpServletRequest request,
       Exception e) {
